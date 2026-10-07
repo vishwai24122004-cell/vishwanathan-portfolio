@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vishwanathan I | MBA Portfolio</title>
+
+    <meta name="description"
+          content="Personal portfolio of Vishwanathan I - MBA Marketing and Supply Chain Management student.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7faf9;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(9, 27, 48, 0.96);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 17px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #6ee7a0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6ee7a0;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #071b31, #12395a);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 120px 25px 70px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero small {
+            color: #7ee7a7;
+            font-size: 17px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: 1.05;
+            margin: 12px 0;
+        }
+
+        .hero h1 span {
+            color: #70e6a0;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #d7e3ef;
+            max-width: 620px;
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #70e6a0;
+            color: #072039;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #b9ccdc;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #09233c;
+        }
+
+        /* PROFILE PHOTO */
+
+        .profile-area {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 360px;
+            height: 430px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 4px solid rgba(112, 230, 160, 0.5);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            background: #183c5d;
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .profile-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            font-weight: 600;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #102d4b;
+        }
+
+        .section-title h2::after {
+            content: "";
+            display: block;
+            width: 55px;
+            height: 4px;
+            background: #36b86e;
+            margin-top: 9px;
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            color: #657084;
+            margin-top: 12px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 35px;
+        }
+
+        .about-text,
+        .quick-facts {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(10, 35, 60, 0.07);
+        }
+
+        .about-text p {
+            margin-bottom: 17px;
+            color: #566276;
+        }
+
+        .fact {
+            padding: 16px 0;
+            border-bottom: 1px solid #e7edf2;
+        }
+
+        .fact:last-child {
+            border-bottom: none;
+        }
+
+        .fact strong {
+            display: block;
+            color: #102d4b;
+        }
+
+        .fact span {
+            color: #687386;
+            font-size: 14px;
+        }
+
+        /* EDUCATION */
+
+        .timeline {
+            position: relative;
+            border-left: 3px solid #55c984;
+            margin-left: 15px;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #39b76d;
+            border-radius: 50%;
+            left: -39px;
+            top: 5px;
+            border: 4px solid #f7faf9;
+        }
+
+        .timeline-item small {
+            color: #36a967;
+            font-weight: 700;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0;
+            color: #102d4b;
+        }
+
+        .timeline-item p {
+            color: #647084;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-card {
+            background: white;
+            padding: 35px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(10,35,60,0.07);
+        }
+
+        .experience-card h3 {
+            color: #102d4b;
+            font-size: 25px;
+        }
+
+        .experience-card .company {
+            color: #2da966;
+            font-weight: 700;
+            margin: 5px 0 20px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+            color: #596678;
+        }
+
+        .experience-card li {
+            margin-bottom: 10px;
+        }
+
+        .achievement-number {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .number-card {
+            background: #edf9f2;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .number-card strong {
+            display: block;
+            font-size: 25px;
+            color: #159653;
+        }
+
+        .number-card span {
+            font-size: 12px;
+            color: #566276;
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(10,35,60,0.07);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #102d4b;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #647084;
+        }
+
+        .tags {
+            margin-top: 18px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #e8f6ef;
+            color: #178a4f;
+            padding: 6px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #dce6ec;
+            padding: 13px 18px;
+            border-radius: 30px;
+            color: #193d5e;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(10,35,60,0.04);
+        }
+
+        /* LEADERSHIP */
+
+        .leadership {
+            background: linear-gradient(120deg, #edf9f2, #eef6ff);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .leadership-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(10,35,60,0.06);
+        }
+
+        .leadership-card h3 {
+            color: #102d4b;
+        }
+
+        .leadership-card p {
+            color: #596678;
+            margin-top: 12px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .cert-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .score {
+            font-size: 25px;
+            font-weight: 800;
+            color: #1b9d5b;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            height: 220px;
+            background: linear-gradient(135deg, #d9e9e0, #dbe7f1);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e7183;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background: #0b2743;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-section .section-title h2 {
+            color: white;
+        }
+
+        .contact-section .section-title p {
+            color: #b9c9d8;
+        }
+
+        .contact-info p {
+            margin: 17px 0;
+            color: #d4e0ea;
+        }
+
+        .contact-info strong {
+            color: #70e6a0;
+        }
+
+        .contact-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #061a2d;
+            color: #cbd7e2;
+            padding: 25px;
+            text-align: center;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-container,
+            .about-grid,
+            .contact-grid,
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero p {
+                margin: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-card {
+                width: 290px;
+                height: 350px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .achievement-number {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 500px) {
+
+            section {
+                padding: 65px 18px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Vishwanathan<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-container">
+
+        <div>
+
+            <small>Hello, I'm</small>
+
+            <h1>
+                Vishwanathan <span>I</span>
+            </h1>
+
+            <h2>
+                MBA – Marketing & Supply Chain Management
+            </h2>
+
+            <p>
+                MBA student passionate about marketing, supply chain,
+                FMCG business, sales, analytics, leadership and
+                sustainable business practices.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="resume.pdf"
+                   class="btn btn-primary"
+                   target="_blank">
+                    📄 View My Resume
+                </a>
+
+                <a href="https://www.linkedin.com/in/vishwanathan-i-6753ab36b/"
+                   target="_blank"
+                   class="btn btn-outline">
+                    🔗 LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-area">
+
+            <div class="profile-card">
+
+                <!-- YOUR PROFILE PHOTO WILL GO HERE -->
+
+                <img src="images/profile.jpg"
+                     alt="Vishwanathan I">
+
+                <div class="profile-caption">
+                    MBA Student • Marketing • Supply Chain
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>About Me</h2>
+
+            <p>
+                A little introduction about my academic and professional journey.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I am an MBA student specializing in Marketing and
+                    Supply Chain Management at St. Joseph's Institute
+                    of Management.
+                </p>
+
+                <p>
+                    I have hands-on FMCG field sales experience through
+                    my internship at Reckitt, where I worked on outlet
+                    visits, retailer engagement, market execution,
+                    KYC enrollment and sales performance.
+                </p>
+
+                <p>
+                    I am interested in marketing, sales, consumer
+                    behaviour, business analytics, supply chain and
+                    sustainable business practices.
+                </p>
+
+                <p>
+                    I enjoy working with teams, taking responsibility,
+                    learning new skills and contributing to meaningful
+                    projects.
+                </p>
+
+            </div>
+
+
+            <div class="quick-facts">
+
+                <h3>Quick Facts</h3>
+
+                <div class="fact">
+                    <strong>🎓 MBA Student</strong>
+                    <span>St. Joseph's Institute of Management</span>
+                </div>
+
+                <div class="fact">
+                    <strong>💼 FMCG Experience</strong>
+                    <span>Reckitt Benckiser (India) Pvt. Ltd.</span>
+                </div>
+
+                <div class="fact">
+                    <strong>🌱 Go Green Club President</strong>
+                    <span>JIM</span>
+                </div>
+
+                <div class="fact">
+                    <strong>📊 Business Projects</strong>
+                    <span>Sales & Consumer Behaviour Research</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Education</h2>
+
+            <p>My academic journey.</p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <small>2025 – 2027</small>
+
+                <h3>
+                    St. Joseph's Institute of Management – JIM
+                </h3>
+
+                <p>
+                    M.B.A. – Marketing, Supply Chain Management
+                    <br>
+                    CGPA: 7.19 / 10
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <small>2022 – 2025</small>
+
+                <h3>
+                    St. Joseph's College (Autonomous), Tiruchirappalli
+                </h3>
+
+                <p>
+                    B.Com. – General
+                    <br>
+                    CGPA: 6.08 / 10
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <small>2022</small>
+
+                <h3>
+                    Guru Gnana Sambandar Mission Hr. Sec. School
+                </h3>
+
+                <p>
+                    12th – TNBHSE
+                    <br>
+                    Percentage: 72 / 100
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <small>2020</small>
+
+                <h3>
+                    Guru Gnana Sambandar Mission Hr. Sec. School
+                </h3>
+
+                <p>
+                    10th – TNBSE
+                    <br>
+                    Percentage: 58.40 / 100
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Professional Experience</h2>
+
+            <p>My practical FMCG experience.</p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>
+                Reckitt Benckiser (India) Pvt. Ltd.
+            </h3>
+
+            <div class="company">
+                FMCG | Internship | 27 Feb 2026 – 11 Jun 2026
+            </div>
+
+            <ul>
+
+                <li>
+                    Managed FMCG outlet visits, beat planning and
+                    retailer engagement across Chennai South.
+                </li>
+
+                <li>
+                    Supported KYC enrollment and new outlet creation.
+                </li>
+
+                <li>
+                    Identified eligible retailers and supported
+                    documentation and data processes.
+                </li>
+
+                <li>
+                    Worked with the sales team to improve outlet
+                    productivity and retailer engagement.
+                </li>
+
+                <li>
+                    Delivered ₹8.92 lakh in sales against a
+                    ₹10.10 lakh target.
+                </li>
+
+            </ul>
+
+
+            <div class="achievement-number">
+
+                <div class="number-card">
+                    <strong>₹8.92L</strong>
+                    <span>Sales Achieved</span>
+                </div>
+
+                <div class="number-card">
+                    <strong>₹10.10L</strong>
+                    <span>Sales Target</span>
+                </div>
+
+                <div class="number-card">
+                    <strong>88.32%</strong>
+                    <span>Target Achievement</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Projects</h2>
+
+            <p>Research and business projects.</p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Sales Force Effectiveness &
+                    Outlet Visit Productivity
+                </h3>
+
+                <p>
+                    A field-based FMCG study examining sales force
+                    effectiveness and outlet visit productivity.
+                    Primary data was collected from 180 retail outlets.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Survey Research</span>
+                    <span class="tag">Retail Management</span>
+                    <span class="tag">Sales Force Effectiveness</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Factors Influencing Impulse Buying Behaviour
+                </h3>
+
+                <p>
+                    A survey-based research study examining purchase
+                    triggers, consumer preferences, shopping patterns
+                    and factors influencing unplanned purchases.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Consumer Behaviour</span>
+                    <span class="tag">Market Research</span>
+                    <span class="tag">Analysis</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Skills</h2>
+
+            <p>My key professional and technical skills.</p>
+
+        </div>
+
+
+        <div class="skills">
+
+            <span class="skill">Customer Relationship Management</span>
+
+            <span class="skill">Retailer Coordination</span>
+
+            <span class="skill">Product Promotion</span>
+
+            <span class="skill">Market Analysis</span>
+
+            <span class="skill">Sales Force Effectiveness</span>
+
+            <span class="skill">Retail Management</span>
+
+            <span class="skill">Consumer Behaviour</span>
+
+            <span class="skill">Power BI</span>
+
+            <span class="skill">Digital Marketing</span>
+
+            <span class="skill">Teamwork</span>
+
+            <span class="skill">Leadership</span>
+
+            <span class="skill">Communication</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LEADERSHIP -->
+
+<section class="leadership" id="leadership">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Leadership & Achievements</h2>
+
+            <p>Leadership roles and contributions.</p>
+
+        </div>
+
+
+        <div class="leadership-grid">
+
+            <div class="leadership-card">
+
+                <h3>🌱 Go Green Club President – JIM</h3>
+
+                <p>
+                    Led and coordinated a 67-member Go Green Club.
+                    Organized environmental awareness activities,
+                    recycling initiatives and eco-friendly programs.
+                    Coordinated team activities and student participation.
+                </p>
+
+            </div>
+
+
+            <div class="leadership-card">
+
+                <h3>🏆 Marketing Coordinator – JIMSPIRE 2025</h3>
+
+                <p>
+                    Planned and executed promotional activities for
+                    an inter-college competition.
+                    Student participation increased from 189 to 334,
+                    while participating colleges increased from
+                    20 to 22.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Certifications</h2>
+
+            <p>Courses and professional learning.</p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card cert-card">
+
+                <div>
+
+                    <h3>Customer Relationship Management</h3>
+
+                    <p>NPTEL</p>
+
+                </div>
+
+                <div class="score">
+                    61
+                </div>
+
+            </div>
+
+
+            <div class="card cert-card">
+
+                <div>
+
+                    <h3>Power BI for Beginners</h3>
+
+                    <p>Simple Learning</p>
+
+                </div>
+
+                <div class="score">
+                    85
+                </div>
+
+            </div>
+
+
+            <div class="card cert-card">
+
+                <div>
+
+                    <h3>Digital Marketing</h3>
+
+                    <p>HP Life</p>
+
+                </div>
+
+                <div class="score">
+                    75
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>My Gallery</h2>
+
+            <p>
+                College life, projects, leadership and memorable moments.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                College & MBA
+            </div>
+
+            <div class="gallery-item">
+                Go Green Club
+            </div>
+
+            <div class="gallery-item">
+                JIMSPIRE
+            </div>
+
+            <div class="gallery-item">
+                Team Activities
+            </div>
+
+            <div class="gallery-item">
+                Presentations
+            </div>
+
+            <div class="gallery-item">
+                Certifications
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div>
+
+                <div class="section-title">
+
+                    <h2>Let's Connect</h2>
+
+                    <p>
+                        Feel free to connect with me for professional
+                        opportunities, projects and collaborations.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-info">
+
+                    <p>
+                        <strong>Email:</strong><br>
+                        25pba115vishwanathani@jim.ac.in
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        +91-7397101696
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong><br>
+                        Tamil Nadu, India
+                    </p>
+
+                </div>
+
+
+                <div class="contact-buttons">
+
+                    <a href="https://www.linkedin.com/in/vishwanathan-i-6753ab36b/"
+                       target="_blank"
+                       class="btn btn-primary">
+                        🔗 Connect on LinkedIn
+                    </a>
+
+                    <a href="resume.pdf"
+                       target="_blank"
+                       class="btn btn-outline">
+                        📄 Download Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="card">
+
+                    <h3>Professional Interests</h3>
+
+                    <br>
+
+                    <div class="tags">
+
+                        <span class="tag">Marketing</span>
+
+                        <span class="tag">Supply Chain</span>
+
+                        <span class="tag">FMCG</span>
+
+                        <span class="tag">Sales</span>
+
+                        <span class="tag">Business Analytics</span>
+
+                        <span class="tag">Consumer Behaviour</span>
+
+                        <span class="tag">Sustainability</span>
+
+                        <span class="tag">Leadership</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>Vishwanathan I</strong>
+    </p>
+
+    <p>
+        MBA | Marketing | Supply Chain Management
+    </p>
+
+</footer>
+
+</body>
+</html>
