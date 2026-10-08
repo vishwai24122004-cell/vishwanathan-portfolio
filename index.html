@@ -1,903 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Vishwanathan I | MBA Portfolio</title>
-
-    <meta name="description"
-          content="Professional portfolio of Vishwanathan I - MBA student specializing in Marketing and Supply Chain Management.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #071d33;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(5, 22, 40, 0.97);
-            z-index: 1000;
-            border-bottom: 1px solid #183c5c;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 18px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .logo span {
-            color: #63e6a5;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-weight: bold;
-            color: #ffffff;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #63e6a5;
-        }
-
-        /* GENERAL */
-        section {
-            padding: 100px 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 50px;
-            color: #63e6a5;
-        }
-
-        .card {
-            background: #0d2b47;
-            border: 1px solid #1c496c;
-            border-radius: 18px;
-            padding: 28px;
-            margin-bottom: 25px;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-            padding-top: 120px;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hello {
-            color: #63e6a5;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 {
-            font-size: 70px;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #63e6a5;
-        }
-
-        .hero h2 {
-            font-size: 28px;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: #d7e4ef;
-            max-width: 700px;
-            margin-bottom: 30px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            border: 1px solid #63e6a5;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #63e6a5;
-            color: #062039;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
-
-        /* PROFILE IMAGE */
-        .profile-box {
-            width: 380px;
-            height: 480px;
-            border: 4px solid #63e6a5;
-            border-radius: 35px;
-            overflow: hidden;
-            position: relative;
-            background: #173d5c;
-            flex-shrink: 0;
-        }
-
-        .profile-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .profile-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 25px;
-            background: linear-gradient(
-                transparent,
-                rgba(0, 0, 0, 0.9)
-            );
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .about-grid p {
-            color: #d7e4ef;
-            font-size: 17px;
-        }
-
-        /* EDUCATION / EXPERIENCE */
-        .timeline-item {
-            border-left: 4px solid #63e6a5;
-            padding-left: 25px;
-            margin-bottom: 35px;
-        }
-
-        .timeline-item h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item h4 {
-            color: #63e6a5;
-            margin-bottom: 10px;
-        }
-
-        .timeline-item p,
-        .timeline-item li {
-            color: #d7e4ef;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        /* PROJECTS */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .project-card h3 {
-            color: #63e6a5;
-            margin-bottom: 12px;
-            font-size: 23px;
-        }
-
-        .project-card p {
-            color: #d7e4ef;
-        }
-
-        .project-tag {
-            display: inline-block;
-            margin-top: 15px;
-            margin-right: 7px;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: #173d5c;
-            color: #63e6a5;
-            font-size: 13px;
-        }
-
-        /* SKILLS */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .skill {
-            background: #0d2b47;
-            border: 1px solid #63e6a5;
-            padding: 12px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        /* LEADERSHIP */
-        .leadership-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .leadership-card h3 {
-            color: #63e6a5;
-            margin-bottom: 10px;
-        }
-
-        .leadership-card p {
-            color: #d7e4ef;
-        }
-
-        /* CERTIFICATIONS */
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .cert-card {
-            background: #0d2b47;
-            border-radius: 15px;
-            padding: 25px;
-            border: 1px solid #1c496c;
-        }
-
-        .cert-card h3 {
-            color: #63e6a5;
-            margin-bottom: 12px;
-        }
-
-        .cert-card a {
-            color: #ffffff;
-            display: inline-block;
-            margin-top: 12px;
-            border-bottom: 1px solid #63e6a5;
-        }
-
-        /* RESUME */
-        .resume-section {
-            text-align: center;
-        }
-
-        .resume-section p {
-            color: #d7e4ef;
-            margin-bottom: 25px;
-        }
-
-        /* GALLERY */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .gallery img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 2px solid #1c496c;
-        }
-
-        /* CONTACT */
-        .contact-box {
-            text-align: center;
-            background: #0d2b47;
-            border: 1px solid #1c496c;
-            border-radius: 20px;
-            padding: 45px;
-        }
-
-        .contact-box p {
-            color: #d7e4ef;
-            margin-bottom: 25px;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-            background: #051628;
-            border-top: 1px solid #183c5c;
-        }
-
-        footer p {
-            color: #b8c8d6;
-            margin: 5px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 900px) {
-
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 160px;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h2 {
-                font-size: 23px;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .profile-box {
-                width: 320px;
-                height: 400px;
-            }
-
-            .about-grid,
-            .projects,
-            .leadership-grid,
-            .certifications {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vishwanathan | MBA Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0,255,170,.12), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(0,140,255,.15), transparent 30%),
+        linear-gradient(135deg,#031426,#061d34,#082b45);
+    color:#ffffff;
+    line-height:1.6;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(3,20,38,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.logo span{
+    color:#55f2ae;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#55f2ae;
+}
+
+/* COMMON */
+
+section{
+    padding:100px 8%;
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:45px;
+    color:#55f2ae;
+}
+
+.card{
+    background:rgba(15,54,82,.65);
+    border:1px solid rgba(85,242,174,.18);
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#55f2ae;
+    box-shadow:0 20px 50px rgba(0,255,170,.12);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    padding-top:130px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.small-title{
+    color:#55f2ae;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#55f2ae;
+}
+
+.hero h2{
+    font-size:27px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#c9d8e5;
+    max-width:700px;
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 23px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.primary{
+    background:#55f2ae;
+    color:#032037;
+}
+
+.primary:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(85,242,174,.4);
+}
+
+.secondary{
+    border:1px solid #55f2ae;
+    color:#fff;
+}
+
+.secondary:hover{
+    background:#55f2ae;
+    color:#032037;
+}
+
+/* PROFILE PHOTO */
+
+.profile-box{
+    width:390px;
+    min-width:320px;
+    padding:10px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#55f2ae,#248cff,#9c5cff);
+    box-shadow:0 0 60px rgba(85,242,174,.18);
+}
+
+.profile-inner{
+    background:#0b2c48;
+    border-radius:22px;
+    overflow:hidden;
+    position:relative;
+}
+
+.profile-inner img{
+    width:100%;
+    height:480px;
+    object-fit:cover;
+    display:block;
+}
+
+.profile-caption{
+    padding:20px;
+    background:linear-gradient(transparent,#061b30);
+    margin-top:-80px;
+    position:relative;
+}
+
+.profile-caption h3{
+    font-size:20px;
+}
+
+.profile-caption p{
+    color:#b9cad7;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card h3{
+    color:#55f2ae;
+    margin-bottom:10px;
+}
+
+/* EDUCATION / EXPERIENCE */
+
+.single-card{
+    margin-bottom:25px;
+}
+
+.highlight{
+    color:#55f2ae;
+    font-weight:bold;
+}
+
+/* PROJECTS */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:4px;
+    background:linear-gradient(90deg,#55f2ae,#248cff,#9c5cff);
+}
+
+.tags{
+    margin-top:15px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+.tag{
+    border:1px solid rgba(85,242,174,.5);
+    color:#55f2ae;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.skill{
+    padding:10px 18px;
+    border-radius:25px;
+    background:rgba(15,54,82,.8);
+    border:1px solid rgba(85,242,174,.4);
+    transition:.3s;
+}
+
+.skill:hover{
+    background:#55f2ae;
+    color:#032037;
+}
+
+/* LEADERSHIP */
+
+.leader-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+/* CERTIFICATIONS */
+
+.cert-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.cert-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.cert-icon{
+    font-size:35px;
+}
+
+/* RESUME */
+
+.resume-box{
+    text-align:center;
+    padding:45px;
+}
+
+/* GALLERY */
+
+.gallery-note{
+    text-align:center;
+    color:#b8cad8;
+    margin-bottom:30px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-card{
+    overflow:hidden;
+    border-radius:18px;
+    background:#0d3453;
+    border:1px solid rgba(85,242,174,.2);
+    transition:.3s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    border-color:#55f2ae;
+}
+
+.gallery-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.gallery-content{
+    padding:18px;
+}
+
+.gallery-content h3{
+    color:#55f2ae;
+    margin-bottom:5px;
+}
+
+.gallery-content p{
+    color:#b8cad8;
+    font-size:14px;
+}
+
+/* CONTACT */
+
+.contact-box{
+    text-align:center;
+    padding:50px;
+}
+
+.contact-box p{
+    color:#c6d5df;
+    margin:10px 0 25px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#020f1d;
+    color:#9db0bf;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer strong{
+    color:#55f2ae;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero h2{
+        font-size:21px;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .profile-box{
+        width:300px;
+        min-width:300px;
+    }
+
+    .profile-inner img{
+        height:380px;
+    }
+
+    .about-grid,
+    .project-grid,
+    .leader-grid,
+    .cert-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
+
 <nav>
-    <div class="nav-container">
 
-        <a href="#home" class="logo">
-            Vishwanathan<span>.</span>
-        </a>
+<div class="logo">
+Vishwanathan<span>.</span>
+</div>
 
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 
-    </div>
 </nav>
 
 
 <!-- HERO -->
-<section id="home" class="hero">
 
-    <div class="hero-content">
+<section class="hero">
 
-        <div class="hello">Hello, I'm</div>
+<div class="hero-text">
 
-        <h1>
-            Vishwanathan <span>I</span>
-        </h1>
+<div class="small-title">Hello, I'm</div>
 
-        <h2>
-            MBA – Marketing & Supply Chain Management
-        </h2>
+<h1>
+Vishwanathan <span>I</span>
+</h1>
 
-        <p>
-            MBA student passionate about Marketing, Supply Chain,
-            FMCG business, Sales, Business Analytics, Leadership
-            and Sustainable Business Practices.
-        </p>
+<h2>
+MBA – Marketing & Supply Chain Management
+</h2>
 
-        <div class="buttons">
+<p>
+MBA student passionate about Marketing, Supply Chain Management,
+FMCG Business, Sales, Business Analytics, Leadership and
+Sustainable Business Practices.
+</p>
 
-            <a href="resume.pdf.pdf"
-               target="_blank"
-               class="btn btn-primary">
-                📄 View My Resume
-            </a>
+<div class="buttons">
 
-            <a href="https://www.linkedin.com/in/vishwanathan-i-6753ab36b/"
-               target="_blank"
-               class="btn btn-secondary">
-                🔗 LinkedIn
-            </a>
+<a class="btn primary"
+href="resume.pdf.pdf"
+target="_blank">
+📄 View My Resume
+</a>
 
-        </div>
+<a class="btn secondary"
+href="YOUR_LINKEDIN_LINK_HERE"
+target="_blank">
+🔗 LinkedIn
+</a>
 
-    </div>
+</div>
+
+</div>
 
 
-    <!-- PROFILE IMAGE -->
-    <div class="profile-box">
+<!-- PROFILE IMAGE -->
 
-        <img src="profile.jpg"
-             alt="Vishwanathan I">
+<div class="profile-box">
 
-        <div class="profile-caption">
-            MBA Student • Marketing • Supply Chain
-        </div>
+<div class="profile-inner">
 
-    </div>
+<img src="profile.jpg" alt="Vishwanathan I">
+
+<div class="profile-caption">
+
+<h3>Vishwanathan I</h3>
+
+<p>
+MBA Student • Marketing • Supply Chain
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- ABOUT -->
+
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+<h2 class="section-title">About Me</h2>
 
-    <div class="about-grid">
+<div class="about-grid">
 
-        <div class="card">
+<div class="card">
 
-            <h3>Professional Profile</h3>
+<h3>Professional Profile</h3>
 
-            <br>
+<p>
+I am an MBA student specializing in Marketing and Supply Chain
+Management. I am interested in FMCG, sales, business analytics,
+customer behaviour and sustainable business practices.
+</p>
 
-            <p>
-                I am an MBA student specializing in Marketing and
-                Supply Chain Management. I am interested in FMCG,
-                sales, business analytics, supply chain operations
-                and sustainable business practices.
-            </p>
+</div>
 
-        </div>
+<div class="card">
 
-        <div class="card">
+<h3>Career Interests</h3>
 
-            <h3>Career Interests</h3>
+<p>
+My career interests include Marketing, Sales, Supply Chain,
+FMCG Business, Business Analytics and Management.
+</p>
 
-            <br>
+</div>
 
-            <p>
-                My career interests include Marketing, Sales,
-                Supply Chain Management, Business Development,
-                Business Analytics and FMCG.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- EDUCATION -->
+
 <section id="education">
 
-    <h2 class="section-title">Education</h2>
+<h2 class="section-title">Education</h2>
 
-    <div class="card timeline-item">
+<div class="card single-card">
 
-        <h3>Master of Business Administration (MBA)</h3>
+<h3>Master of Business Administration (MBA)</h3>
 
-        <h4>
-            Marketing & Supply Chain Management
-        </h4>
+<p class="highlight">
+Marketing & Supply Chain Management
+</p>
 
-        <p>
-            St. Joseph's Institute of Management
-        </p>
+<p>
+MBA Student
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- EXPERIENCE -->
+
 <section id="experience">
 
-    <h2 class="section-title">Experience</h2>
+<h2 class="section-title">Experience</h2>
 
-    <div class="card timeline-item">
+<div class="card single-card">
 
-        <h3>FMCG Sales Internship</h3>
+<h3>FMCG Sales Internship</h3>
 
-        <h4>Reckitt</h4>
+<p class="highlight">
+Reckitt
+</p>
 
-        <ul>
-            <li>Worked on FMCG sales and market activities.</li>
-            <li>Supported customer and outlet interactions.</li>
-            <li>Worked towards monthly sales targets.</li>
-            <li>Developed practical sales and communication skills.</li>
-            <li>Gained experience in field-level business activities.</li>
-        </ul>
+<ul>
 
-    </div>
+<li>Worked on FMCG sales and customer interaction.</li>
+
+<li>Monthly sales target: ₹10.7 Lakhs.</li>
+
+<li>Achieved sales of approximately ₹7.83 Lakhs.</li>
+
+<li>Developed communication and customer handling skills.</li>
+
+<li>Gained practical exposure to sales performance.</li>
+
+</ul>
+
+</div>
 
 </section>
 
 
 <!-- PROJECTS -->
+
 <section id="projects">
 
-    <h2 class="section-title">Projects</h2>
+<h2 class="section-title">Projects</h2>
 
-    <div class="projects">
+<div class="project-grid">
 
-        <div class="card project-card">
+<div class="card project-card">
 
-            <h3>
-                Sales Force Effectiveness & Outlet Productivity
-            </h3>
+<h3>Sales Force Effectiveness & Outlet Productivity</h3>
 
-            <p>
-                A business project focused on improving sales-force
-                performance, outlet productivity and sales effectiveness.
-            </p>
+<p>
+Study of sales performance, outlet productivity and
+field-level sales effectiveness.
+</p>
 
-            <span class="project-tag">Sales</span>
-            <span class="project-tag">FMCG</span>
-            <span class="project-tag">Analytics</span>
+<div class="tags">
+<span class="tag">Sales</span>
+<span class="tag">FMCG</span>
+<span class="tag">Analytics</span>
+</div>
 
-        </div>
-
-
-        <div class="card project-card">
-
-            <h3>
-                Consumer Impulse Buying Behaviour
-            </h3>
-
-            <p>
-                A project focused on understanding consumer behaviour
-                and the factors influencing impulse purchase decisions.
-            </p>
-
-            <span class="project-tag">Marketing</span>
-            <span class="project-tag">Consumer Behaviour</span>
-
-        </div>
+</div>
 
 
-        <div class="card project-card">
+<div class="card project-card">
 
-            <h3>
-                Generative AI & Business Analytics
-            </h3>
+<h3>Consumer Impulse Buying Behaviour</h3>
 
-            <p>
-                A business study on how Generative AI and Business
-                Analytics can support business performance improvement,
-                decision-making and operational efficiency.
-            </p>
+<p>
+Analysis of customer behaviour and factors influencing
+impulse purchasing decisions.
+</p>
 
-            <span class="project-tag">Generative AI</span>
-            <span class="project-tag">Business Analytics</span>
+<div class="tags">
+<span class="tag">Marketing</span>
+<span class="tag">Consumer Behaviour</span>
+</div>
 
-        </div>
+</div>
 
 
-        <div class="card project-card">
+<div class="card project-card">
 
-            <h3>
-                Sustainable Business & Go Green Activities
-            </h3>
+<h3>Generative AI & Business Analytics</h3>
 
-            <p>
-                Sustainability-focused activities connecting student
-                initiatives with environmental awareness and
-                Sustainable Development Goals.
-            </p>
+<p>
+Study of how Generative AI and Business Analytics can
+support better business performance and decision-making.
+</p>
 
-            <span class="project-tag">Sustainability</span>
-            <span class="project-tag">SDGs</span>
+<div class="tags">
+<span class="tag">GenAI</span>
+<span class="tag">Business Analytics</span>
+</div>
 
-        </div>
+</div>
 
-    </div>
+
+<div class="card project-card">
+
+<h3>Sustainable Business & Go Green Activities</h3>
+
+<p>
+Sustainability initiatives, awareness activities and
+student participation connected with SDG goals.
+</p>
+
+<div class="tags">
+<span class="tag">Sustainability</span>
+<span class="tag">SDG</span>
+<span class="tag">Leadership</span>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- SKILLS -->
+
 <section id="skills">
 
-    <h2 class="section-title">Skills</h2>
+<h2 class="section-title">Skills</h2>
 
-    <div class="skills">
+<div class="skills">
 
-        <div class="skill">Marketing</div>
-        <div class="skill">Sales</div>
-        <div class="skill">Supply Chain Management</div>
-        <div class="skill">Business Analytics</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Business Development</div>
-        <div class="skill">Communication</div>
-        <div class="skill">Teamwork</div>
-        <div class="skill">Leadership</div>
-        <div class="skill">Presentation</div>
-        <div class="skill">FMCG</div>
-        <div class="skill">Sustainability</div>
+<span class="skill">Marketing</span>
+<span class="skill">Sales</span>
+<span class="skill">Supply Chain Management</span>
+<span class="skill">Business Analytics</span>
+<span class="skill">Excel</span>
+<span class="skill">Business Development</span>
+<span class="skill">Communication</span>
+<span class="skill">Teamwork</span>
+<span class="skill">Leadership</span>
+<span class="skill">Presentation</span>
+<span class="skill">FMCG</span>
+<span class="skill">Sustainability</span>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- LEADERSHIP -->
+
 <section id="leadership">
 
-    <h2 class="section-title">Leadership</h2>
+<h2 class="section-title">Leadership</h2>
 
-    <div class="leadership-grid">
+<div class="leader-grid">
 
-        <div class="card leadership-card">
+<div class="card">
 
-            <h3>Go Green Club President</h3>
+<h3>Go Green Club President</h3>
 
-            <p>
-                Leading student activities focused on sustainability,
-                environmental awareness, waste management and
-                responsible business practices.
-            </p>
+<p>
+Leading student sustainability initiatives, awareness activities,
+creative competitions and green campus activities.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="card leadership-card">
+<div class="card">
 
-            <h3>JIMINSIA House Captain</h3>
+<h3>JIMINSIA House Captain</h3>
 
-            <p>
-                Participated in student leadership and coordinated
-                activities involving students from different years
-                and teams.
-            </p>
+<p>
+Served as a first-year house captain and supported teamwork,
+coordination and participation among students.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- CERTIFICATIONS -->
+
 <section id="certifications">
 
-    <h2 class="section-title">Certifications</h2>
+<h2 class="section-title">Certifications</h2>
 
-    <div class="certifications">
+<div class="cert-grid">
 
-        <div class="cert-card">
+<div class="card cert-card">
 
-            <h3>Certificate 01</h3>
+<div>
 
-            <p>
-                Professional / Academic Certificate
-            </p>
+<h3>Certification 01</h3>
 
-            <a href="certificates/certificate1.pdf"
-               target="_blank">
-                📄 View Certificate
-            </a>
+<p>Business / Management Certification</p>
 
-        </div>
+<a class="btn secondary"
+href="certificate1.pdf"
+target="_blank">
+View Certificate
+</a>
 
+</div>
 
-        <div class="cert-card">
+<div class="cert-icon">🏆</div>
 
-            <h3>Certificate 02</h3>
-
-            <p>
-                Professional / Academic Certificate
-            </p>
-
-            <a href="certificates/certificate2.pdf"
-               target="_blank">
-                📄 View Certificate
-            </a>
-
-        </div>
+</div>
 
 
-        <div class="cert-card">
+<div class="card cert-card">
 
-            <h3>Certificate 03</h3>
+<div>
 
-            <p>
-                Professional / Academic Certificate
-            </p>
+<h3>Certification 02</h3>
 
-            <a href="certificates/certificate3.pdf"
-               target="_blank">
-                📄 View Certificate
-            </a>
+<p>Marketing / Business Certification</p>
 
-        </div>
+<a class="btn secondary"
+href="certificate2.pdf"
+target="_blank">
+View Certificate
+</a>
+
+</div>
+
+<div class="cert-icon">📜</div>
+
+</div>
 
 
-        <div class="cert-card">
+<div class="card cert-card">
 
-            <h3>Certificate 04</h3>
+<div>
 
-            <p>
-                Professional / Academic Certificate
-            </p>
+<h3>Certification 03</h3>
 
-            <a href="certificates/certificate4.pdf"
-               target="_blank">
-                📄 View Certificate
-            </a>
+<p>Analytics / Skill Certification</p>
 
-        </div>
+<a class="btn secondary"
+href="certificate3.pdf"
+target="_blank">
+View Certificate
+</a>
 
-    </div>
+</div>
+
+<div class="cert-icon">🎓</div>
+
+</div>
+
+
+<div class="card cert-card">
+
+<div>
+
+<h3>Certification 04</h3>
+
+<p>Additional Professional Certification</p>
+
+<a class="btn secondary"
+href="certificate4.pdf"
+target="_blank">
+View Certificate
+</a>
+
+</div>
+
+<div class="cert-icon">⭐</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- RESUME -->
-<section class="resume-section">
 
-    <h2 class="section-title">My Resume</h2>
+<section>
 
-    <div class="card">
+<h2 class="section-title">My Resume</h2>
 
-        <p>
-            You can view or download my latest professional resume.
-        </p>
+<div class="card resume-box">
 
-        <a href="resume.pdf.pdf"
-           target="_blank"
-           class="btn btn-primary">
-            📄 Open Resume
-        </a>
+<p>
+You can view or download my latest professional resume.
+</p>
 
-    </div>
+<br>
+
+<a class="btn primary"
+href="resume.pdf.pdf"
+target="_blank">
+📄 Open Resume
+</a>
+
+</div>
 
 </section>
 
 
 <!-- GALLERY -->
+
 <section id="gallery">
 
-    <h2 class="section-title">Gallery</h2>
+<h2 class="section-title">Gallery</h2>
 
-    <div class="gallery">
+<p class="gallery-note">
+A collection of my academic activities, leadership events,
+projects, competitions and professional experiences.
+</p>
 
-        <img src="profile.jpg"
-             alt="Vishwanathan">
 
-        <!-- Add more images later -->
-        <img src="images/project1.jpg"
-             alt="Project">
+<div class="gallery-grid">
 
-        <img src="images/project2.jpg"
-             alt="Activity">
 
-    </div>
+<!-- IMAGE 1 -->
+
+<div class="gallery-card">
+
+<img src="gallery1.jpg" alt="Academic Activity">
+
+<div class="gallery-content">
+
+<h3>Academic Activity</h3>
+
+<p>
+MBA academic and learning activity.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE 2 -->
+
+<div class="gallery-card">
+
+<img src="gallery2.jpg" alt="Leadership Activity">
+
+<div class="gallery-content">
+
+<h3>Leadership</h3>
+
+<p>
+Leadership and student coordination activity.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE 3 -->
+
+<div class="gallery-card">
+
+<img src="gallery3.jpg" alt="Go Green Activity">
+
+<div class="gallery-content">
+
+<h3>Go Green Club</h3>
+
+<p>
+Sustainability and green campus activity.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE 4 -->
+
+<div class="gallery-card">
+
+<img src="gallery4.jpg" alt="College Event">
+
+<div class="gallery-content">
+
+<h3>College Event</h3>
+
+<p>
+Participation in college events and activities.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE 5 -->
+
+<div class="gallery-card">
+
+<img src="gallery5.jpg" alt="Project Presentation">
+
+<div class="gallery-content">
+
+<h3>Project Presentation</h3>
+
+<p>
+MBA project and presentation experience.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- IMAGE 6 -->
+
+<div class="gallery-card">
+
+<img src="gallery6.jpg" alt="Team Activity">
+
+<div class="gallery-content">
+
+<h3>Team Activity</h3>
+
+<p>
+Teamwork, collaboration and student activities.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
+
 <section id="contact">
 
-    <h2 class="section-title">Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-    <div class="contact-box">
+<div class="card contact-box">
 
-        <h3>Let's Connect</h3>
+<h3>Let's Connect!</h3>
 
-        <br>
+<p>
+I am open to opportunities related to Marketing, Sales,
+Supply Chain Management, FMCG and Business Analytics.
+</p>
 
-        <p>
-            I am open to connecting for career opportunities,
-            internships, projects and professional discussions.
-        </p>
+<div class="buttons" style="justify-content:center;">
 
-        <a href="https://www.linkedin.com/in/vishwanathan-i-6753ab36b/"
-           target="_blank"
-           class="btn btn-primary">
-            🔗 Connect on LinkedIn
-        </a>
+<a class="btn primary"
+href="YOUR_LINKEDIN_LINK_HERE"
+target="_blank">
+🔗 Connect on LinkedIn
+</a>
 
-    </div>
+</div>
+
+</div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-    <p>
-        © 2026 <strong>Vishwanathan I</strong>
-    </p>
+<p>
+© 2026 <strong>Vishwanathan I</strong>
+</p>
 
-    <p>
-        MBA | Marketing | Supply Chain Management
-    </p>
+<p>
+MBA | Marketing | Supply Chain Management
+</p>
 
 </footer>
-
 
 </body>
 </html>
